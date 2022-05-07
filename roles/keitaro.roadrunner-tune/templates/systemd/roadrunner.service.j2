@@ -1,0 +1,25 @@
+[Unit]
+Description=Keitaro RoadRunner service
+After=syslog.target network.target
+
+
+[Service]
+ExecStart={{ rr_wrapper }} start
+ExecReload={{ rr_wrapper }} reload
+WorkingDirectory=/home/keitaro
+LimitNOFILE=2000
+User=keitaro
+Group=keitaro
+
+Type=notify
+NotifyAccess=all
+WatchdogSec=30s
+Restart=always
+RestartSec=60s
+StartLimitInterval=5min
+StartLimitBurst=4
+StartLimitAction=reboot
+
+
+[Install]
+WantedBy=multi-user.target

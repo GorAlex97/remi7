@@ -1,0 +1,10 @@
+.idea
+.vagrant
+.keitaro
+doc
+hosts.txt
+hosts-gitlab
+*.retry
+.DS_Store
+TODO
+builds

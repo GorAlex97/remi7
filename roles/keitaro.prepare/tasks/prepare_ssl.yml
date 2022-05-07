@@ -1,0 +1,22 @@
+- name: Install packages
+  package:
+    name: certbot
+    state: installed
+  when: rhel_version == 7
+
+- name: install packages
+  dnf:
+    name: certbot
+    state: installed
+  when: rhel_version == 8
+
+- name: Create directory for ssl certs
+  file:
+    path: "{{ ssl_root }}"
+    state: directory
+
+- name: Remove old renewal certs job
+  cron:
+    name: Renew Let's Encrypt certs
+    state: absent
+    user: "{{ nginx_user }}"
