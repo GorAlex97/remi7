@@ -1,5 +1,6 @@
 ---
 #remi_repo_base_url: "{{ keitaro_url }}/mirrors/remi"
+remi_repo_base_url: "https://rpms.remirepo.net/enterprise/"
 remi_repo_url: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
 remi_repo_gpg_key_url: "https://git.remirepo.net/cgit/rpms/remi-release.git/tree/RPM-GPG-KEY-remi"
 remi_repo_centos8: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
